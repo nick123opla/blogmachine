@@ -5,7 +5,10 @@ import {
   AiOutlineGithub,
   AiOutlineInstagram,
   AiOutlineMail,
+  AiOutlineWhatsApp,
+
 } from "react-icons/ai"
+import { FaTelegramPlane } from "react-icons/fa";
 import { CONFIG } from "site.config"
 import { Emoji } from "src/components/Emoji"
 
@@ -13,27 +16,27 @@ const ContactCard: React.FC = () => {
   return (
     <>
       <StyledTitle>
-        <Emoji>💬</Emoji> Contact
+        <Emoji>💬</Emoji> Контакты
       </StyledTitle>
       <StyledWrapper>
-        {CONFIG.profile.github && (
+        {CONFIG.profile.whatsapp && (
           <a
-            href={`https://github.com/${CONFIG.profile.github}`}
+            href={`https://wa.me/${CONFIG.profile.whatsapp}`}
             rel="noreferrer"
             target="_blank"
           >
-            <AiOutlineGithub className="icon" />
-            <div className="name">github</div>
+            <AiOutlineWhatsApp className="icon" />
+            <div className="name">Whatsapp</div>
           </a>
         )}
-        {CONFIG.profile.instagram && (
+        {CONFIG.profile.telegram && (
           <a
-            href={`https://www.instagram.com/${CONFIG.profile.instagram}`}
+            href={`https://web.telegram.org/k/#${CONFIG.profile.telegram}`}
             rel="noreferrer"
             target="_blank"
           >
-            <AiOutlineInstagram className="icon" />
-            <div className="name">instagram</div>
+            <FaTelegramPlane className="icon" />
+            <div className="name">Telegram</div>
           </a>
         )}
         {CONFIG.profile.email && (
@@ -44,7 +47,7 @@ const ContactCard: React.FC = () => {
             css={{ overflow: "hidden" }}
           >
             <AiOutlineMail className="icon" />
-            <div className="name">email</div>
+            <div className="name">Email</div>
           </a>
         )}
         {CONFIG.profile.linkedin && (
